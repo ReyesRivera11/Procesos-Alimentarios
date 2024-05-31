@@ -12,7 +12,7 @@ export class AuthService {
 
     async login(loginDto: LoginDto) {
         try {
-            
+
             const user = await this.alumnosModel.findOne({ matricula: loginDto.username });
 
             const {password,...rest} = user.toObject(); 
