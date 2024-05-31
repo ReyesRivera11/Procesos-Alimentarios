@@ -23,7 +23,7 @@ export class AuthService {
 
             const isPasswordValis = await bcrypt.compare(loginDto.password, user.password);
 
-            if (!isPasswordValis) throw new HttpException("La contraseña es incorrecta", HttpStatus.UNAUTHORIZED);
+            if (!isPasswordValis) throw new HttpException("La contraseña es incorrecta.", HttpStatus.UNAUTHORIZED);
 
             return rest;
 
