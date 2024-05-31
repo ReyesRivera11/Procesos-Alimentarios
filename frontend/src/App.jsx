@@ -5,7 +5,8 @@ function App() {
 
   return (
     <div >
-      <AppRoutes/>
+      {/* <AppRoutes/> */}
+      <p>Hola</p>
     </div>
   )
 }
