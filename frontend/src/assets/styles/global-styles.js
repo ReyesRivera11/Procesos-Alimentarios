@@ -1,11 +1,7 @@
 export const styles = {
-    textColorTitle:"blue",
-    textColorSubTitle:"blue",
-    textColor:"blue",
-    backgroundGreen:"green",
-    backgroundBeige:"#FFE7D4",
+    backgroundBeige:"#F2D98D",
     backgroundOrange:"D9560B",
-    titleSize:"2xl",
-    subtitleSize:"2xl",
-    textSize:"2xl",
+    backegroundNav:"#262626",
+    btnNavBar:"#D9560B",
+    backegrounGreen:"#03A63C"
 }

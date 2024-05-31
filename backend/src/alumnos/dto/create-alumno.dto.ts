@@ -13,6 +13,12 @@ export class CreateAlumnoDto {
     @MinLength(8)
     matricula:string;
 
+    @IsString()
+    @IsNotEmpty()
+    @MaxLength(40)
+    @MinLength(8)
+    password:string;
+
     @IsOptional()
     @IsBoolean()
     estado:boolean;

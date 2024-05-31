@@ -4,12 +4,19 @@ import { UpdateAlumnoDto } from './dto/update-alumno.dto';
 import { InjectModel } from '@nestjs/mongoose';
 import { Alumnos } from './schemas/alumno-schema';
 import { Model } from 'mongoose';
-
+import * as bcrypt from 'bcrypt';
 @Injectable()
 export class AlumnosService {
   constructor(@InjectModel(Alumnos.name) private alusmosModel: Model<Alumnos>) { }
   async create(createAlumnoDto: CreateAlumnoDto) {
-    const res = new this.alusmosModel(createAlumnoDto);
+    const hasedPassword = await bcrypt.hash(createAlumnoDto.password,10);
+    const res = new this.alusmosModel(
+      {
+        ...createAlumnoDto,
+        password:hasedPassword,
+      }
+    );
+    
     await res.save();
     return res;
   }
